@@ -81,11 +81,7 @@ print("Model loaded successfully")
 def split_sentences(input_text):
     with MosesSentenceSplitter("en") as splitter:
         sents_moses = splitter([input_text])
-    sents_nltk = sent_tokenize(input_text)
-    if len(sents_nltk) < len(sents_moses):
-        input_sentences = sents_nltk
-    else:
-        input_sentences = sents_moses
+    input_sentences = sents_moses
     input_sentences = [sent.replace("\xad", "") for sent in input_sentences]
     return input_sentences
 
@@ -129,3 +125,10 @@ def translateParagraph(input_text, tgt_lang):
     input_sentences = split_sentences(input_text)
     translated_text = batch_translate(input_sentences,tgt_lang)
     return " ".join(translated_text)
+
+if __name__ == "__main__":
+    input_text = input("Enter the text to be translated: ")
+    tgt_lang = "pan_Guru"
+    translated_text = translateParagraph(input_text, tgt_lang)
+    print("Translated text:")
+    print(translated_text)
