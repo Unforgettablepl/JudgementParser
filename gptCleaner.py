@@ -180,22 +180,22 @@ This appeal raises important questions about the application of criminal law.
             <tr>
                 <td><span class="text">1</span></td>
                 <td><span class="text">Introduction</span></td>
-                <td><span class="text">1</span></td>
+                <td><span class="text">1st page</span></td>
             </tr>
             <tr>
                 <td><span class="text">2</span></td>
                 <td><span class="text">Background</span></td>
-                <td><span class="text">2</span></td>
+                <td><span class="text">2nd page</span></td>
             </tr>
             <tr>
                 <td><span class="text">3</span></td>
                 <td><span class="text">Arguments</span></td>
-                <td><span class="text">3</span></td>
+                <td><span class="text">3rd page</span></td>
             </tr>
             <tr>
                 <td><span class="text">4</span></td>
                 <td><span class="text">Conclusion</span></td>
-                <td><span class="text">4</span></td>
+                <td><span class="text">4th page</span></td>
             </tr>
         </tbody>
     </table>
