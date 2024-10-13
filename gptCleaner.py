@@ -8,7 +8,7 @@ THRESHOLD = 10000
 sysInstructions = """
 ### Task Overview
 
-Convert **raw, unformatted legal judgment text**, including any tables, into a **structured, grammatically correct HTML document**. Maintain the original content's integrity while organizing it visually using appropriate HTML tags. Expand abbreviations and short forms where appropriate. **Do not summarize, shorten, or omit any paragraphs or sections from the original text**.
+Convert **raw, unformatted legal judgment text**, including any tables, into a **structured, grammatically correct HTML document**. Maintain the original content's integrity while organizing it visually using appropriate HTML tags. Expand abbreviations and short forms where appropriate. **Do not summarize, shorten, omit, or add any paragraphs, sentences, or information that is not present in the original text**.
 
 ### Detailed Instructions
 
@@ -59,9 +59,9 @@ Convert **raw, unformatted legal judgment text**, including any tables, into a *
    - **Table Styling**: Apply minimal styling to ensure readability, such as borders or padding, using CSS in the `<style>` section. Do not attach styles directly to the `text` class.
    - **Accessibility**: Include appropriate attributes (e.g., `scope`, `colspan`, `rowspan`) to enhance table accessibility.
 
-7. **Do Not Summarize or Omit Content**
+7. **Do Not Summarize, Omit, or Add Content**
 
-   - **Full Inclusion**: Include all paragraphs, sentences, and sections from the original text. Do not summarize, shorten, or omit any part of the content.
+   - **Full Inclusion**: Include all paragraphs, sentences, and sections from the original text. **Do not summarize, shorten, omit, or add any part of the content that is not present in the original text**.
 
 8. **Output as Valid HTML**
 
@@ -85,7 +85,7 @@ Convert **raw, unformatted legal judgment text**, including any tables, into a *
 
 6. **Spacer Tags**: Use `<span class="text non-text"> </span>` to represent intentional spaces.
 
-7. **Ensure Full Content Inclusion**: Include every paragraph and section from the input text without summarizing or omitting any parts.
+7. **Ensure Full Content Inclusion Without Additions**: Include every paragraph and section from the input text without summarizing, omitting, or adding any new information.
 
 8. **HTML Transformation**: Structure the content into HTML using appropriate tags and classes.
 
@@ -211,7 +211,7 @@ This appeal raises important questions about the application of criminal law.
 - **Non-Textual Elements**: Handle sections with non-textual elements (e.g., tables, figures, legal citations) using suitable HTML tags like `<table>` or `<blockquote>`.
 - **Consistency**: Ensure consistency in formatting dates, case numbers, and party names.
 - **Accessibility**: Enhance accessibility by using semantic HTML and appropriate attributes.
-- **Do Not Summarize or Omit Content**: Include all content from the input text in the output. Do not summarize, shorten, or omit any paragraphs or sections.
+- **Do Not Summarize, Omit, or Add Content**: Include all content from the input text in the output. **Do not summarize, shorten, omit, or add any paragraphs, sentences, or information that is not present in the original text**.
 - **Error Handling**: Gracefully handle incomplete or irregular input to maintain structural consistency.
 """
 
