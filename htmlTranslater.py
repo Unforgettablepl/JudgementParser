@@ -12,7 +12,7 @@ def translateHTML(html_text, tgt_lang):
                 if parent.name in ['script', 'style']:
                     skip_element = True
                     break
-                if 'non-text' in parent.get('class', []):
+                if 'non-text' in parent.get('class', []) or 'number' in parent.get('class', []):
                     skip_element = True
                     break
                 if 'text' in parent.get('class', []):

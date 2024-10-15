@@ -7,7 +7,7 @@ import os
 
 # inp = input("Enter the path to the pdf file: ")
 # tgt_lang = input("Enter the language to be translated into: ")
-inp = "/mnt/c/Users/Samik Goyal/Documents/sc_writ.pdf"
+inp = "/mnt/c/Users/Samik Goyal/Documents/sc_writ_3.pdf"
 tgt_lang = "pan_Guru"
 
 if tgt_lang not in flores_codes:

@@ -8,7 +8,7 @@ THRESHOLD = 10000
 sysInstructions = """
 ### Task Overview
 
-Convert **raw, unformatted legal judgment text**, including any tables, into a **structured, grammatically correct HTML document**. Maintain the original content's integrity while organizing it visually using appropriate HTML tags. Expand abbreviations and short forms where appropriate. **Do not summarize, shorten, or omit any paragraphs or sections from the original text**.
+Convert **raw, unformatted legal judgment text**, including any tables, into a **structured, grammatically correct HTML document**. Maintain the original content's integrity while organizing it visually using appropriate HTML tags. Expand abbreviations and short forms where appropriate. **Do not summarize, shorten, omit, or add any paragraphs, sentences, or information that is not present in the original text**.
 
 ### Detailed Instructions
 
@@ -41,7 +41,7 @@ Convert **raw, unformatted legal judgment text**, including any tables, into a *
 
 5. **HTML Structuring**
 
-   - **Headings**: Convert key sections, such as court titles (e.g., "IN THE SUPREME COURT OF INDIA"), into headings (`<h1>`, `<h2>`, etc.) and center-align them where appropriate.
+   - **Headings**: Convert key sections, such as court titles (e.g., "IN THE SUPREME COURT OF INDIA"), into headings using the `<h3>` tag. **All headings should use the `<h3>` tag; do not use `<h1>` or `<h2>`.** Center-align headings where appropriate.
    - **Paragraphs**: Use `<p class="text">` for paragraphs and justify them using CSS (`text-align: justify`).
    - **Text Class**: Wrap all textual content in a `text` class for post-processing. **Do not attach any CSS properties to the `text` class**.
    - **Font Specification**: Use Google Noto Sans as the primary font by including the link to Google Fonts in the `<head>`. Apply the font to all textual content via CSS, but do not style the `text` class directly.
@@ -59,9 +59,9 @@ Convert **raw, unformatted legal judgment text**, including any tables, into a *
    - **Table Styling**: Apply minimal styling to ensure readability, such as borders or padding, using CSS in the `<style>` section. Do not attach styles directly to the `text` class.
    - **Accessibility**: Include appropriate attributes (e.g., `scope`, `colspan`, `rowspan`) to enhance table accessibility.
 
-7. **Do Not Summarize or Omit Content**
+7. **Do Not Summarize, Omit, or Add Content**
 
-   - **Full Inclusion**: Include all paragraphs, sentences, and sections from the original text. Do not summarize, shorten, or omit any part of the content.
+   - **Full Inclusion**: Include all paragraphs, sentences, and sections from the original text. **Do not summarize, shorten, omit, or add any part of the content that is not present in the original text**.
 
 8. **Output as Valid HTML**
 
@@ -87,7 +87,10 @@ Convert **raw, unformatted legal judgment text**, including any tables, into a *
 
 7. **Ensure Full Content Inclusion**: Include every paragraph and section from the input text without summarizing or omitting any parts.
 
-8. **HTML Transformation**: Structure the content into HTML using appropriate tags and classes.
+8. **HTML Transformation**
+
+   - Structure the content into HTML using appropriate tags and classes.
+   - **Use `<h3>` for all headings** and do not use `<h1>` or `<h2>`.
 
 ### Input Sample
 
@@ -157,23 +160,23 @@ This appeal raises important questions about the application of criminal law.
     </style>
 </head>
 <body>
-    <h1 class="text center-align">In the Supreme Court of India</h1>
-    <h2 class="text center-align">Criminal Appellate Jurisdiction</h2>
-    <h3 class="text center-align">Criminal Appeal Number ________ of 2024</h3>
+    <h3 class="text center-align">In the Supreme Court of India</h3>
+    <h3 class="text center-align">Criminal Appellate Jurisdiction</h3>
+    <h3 class="text center-align">Criminal Appeal No. ________ of 2024</h3>
     <p class="text center-align">[Arising out of Special Leave Petition (Criminal) No.4353 of 2018]</p>
-    <h3 class="text center-align"><strong>K. Bharthi Devi and Another</strong><span class="text non-text"> </span>Appellant(s)</h3>
+    <h3 class="text center-align"><strong>K. Bharthi Devi and Another</strong><span class="text non-text">      </span>Appellant(s)</h3>
     <h3 class="text center-align">Versus</h3>
-    <h3 class="text center-align"><strong>State of Telangana and Another</strong><span class="text non-text"> </span>Respondent(s)</h3>
-    <h2 class="text center-align">Judgment</h2>
-    <h3 class="text center-align">Justice B.R. Gavai</h3>
+    <h3 class="text center-align"><strong>State of Telangana and Another</strong><span class="text non-text">     </span>Respondent(s)</h3>
+    <h3 class="text center-align">Judgment</h3>
+    <h3 class="text center-align">B.R. Gavai, Justice</h3>
     <p><span class="number">1. </span><span class="text">Leave granted.</span></p>
     <p class="text">The following is the table of contents:</p>
     <table>
         <thead>
             <tr>
-                <th><span class="text">Sl. No.</span></th>
+                <th><span class="text">Serial Number</span></th>
                 <th><span class="text">Section</span></th>
-                <th><span class="text">Page No.</span></th>
+                <th><span class="text">Page Number</span></th>
             </tr>
         </thead>
         <tbody>
@@ -208,6 +211,7 @@ This appeal raises important questions about the application of criminal law.
 
 ### Additional Notes
 
+- **Heading Tags**: **Use `<h3>` for all headings**. Do not use `<h1>` or `<h2>`.
 - **Non-Textual Elements**: Handle sections with non-textual elements (e.g., tables, figures, legal citations) using suitable HTML tags like `<table>` or `<blockquote>`.
 - **Consistency**: Ensure consistency in formatting dates, case numbers, and party names.
 - **Accessibility**: Enhance accessibility by using semantic HTML and appropriate attributes.
