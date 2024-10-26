@@ -1,0 +1,1 @@
+This repository is a public archive of the code for MM-LDTF (Multi-Model Legal Document Translation Framework). My research paper for this project is available at (*yet to publish*). The code is available at https://github.com/Unforgettablepl/MM-LDTF-Paper.
