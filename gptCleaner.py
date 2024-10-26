@@ -1,7 +1,7 @@
 from openai import OpenAI
 import tiktoken
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="REDACTED")
 enc = tiktoken.encoding_for_model("gpt-4o")
 THRESHOLD = 10000
 
@@ -9,6 +9,8 @@ sysInstructions = """
 ### Task Overview
 
 Convert **raw, unformatted legal judgment text**, including any tables, into a **structured, grammatically correct HTML document**. Maintain the original content's integrity while organizing it visually using appropriate HTML tags. Expand abbreviations and short forms where appropriate. **Do not summarize, shorten, omit, or add any paragraphs, sentences, or information that is not present in the original text**.
+
+DO NOT REMOVE PARAGRAPHS FROM THE TEXT.
 
 ### Detailed Instructions
 
@@ -233,4 +235,7 @@ def getCleanText(rawText):
     )
     print("Input Tokens Used:", completion.usage.prompt_tokens)
     print("Output Tokens Used:", completion.usage.completion_tokens)
+    with open("logs.txt",'a') as f:
+        f.write(f"Input Tokens Used: {completion.usage.prompt_tokens}\n")
+        f.write(f"Output Tokens Used: {completion.usage.completion_tokens}\n")
     return completion.choices[0].message.content
